@@ -37,7 +37,7 @@ public class UrlService {
     }
 
     private Url createUrl(String originalUrl){
-        if (!originalUrl.startsWith("https") || !originalUrl.startsWith("http")){
+        if (!originalUrl.startsWith("https") && !originalUrl.startsWith("http")){
             originalUrl = "https://" + originalUrl;
         }
 
