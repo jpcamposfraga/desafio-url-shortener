@@ -22,7 +22,7 @@ public class Url {
 
     @Id
     @Column(name = "short-url_code")
-    String ShortUrlCode;
+    String shortUrlCode;
 
     @Column(name = "created_at")
     LocalDateTime createdAt;
