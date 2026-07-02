@@ -21,7 +21,7 @@ public class Url {
     String originalUrl;
 
     @Id
-    @Column(name = "short-url_code")
+    @Column(name = "short_url_code")
     String shortUrlCode;
 
     @Column(name = "created_at")
