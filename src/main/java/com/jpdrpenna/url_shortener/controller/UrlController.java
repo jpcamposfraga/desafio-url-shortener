@@ -1,4 +1,4 @@
-package com.jpdrpenna.url_shortener;
+package com.jpdrpenna.url_shortener.controller;
 
 import com.jpdrpenna.url_shortener.entity.Url;
 import com.jpdrpenna.url_shortener.entity.dto.ResponseUrlDTO;
