@@ -3,7 +3,6 @@ package com.jpdrpenna.url_shortener;
 import com.jpdrpenna.url_shortener.entity.Url;
 import com.jpdrpenna.url_shortener.entity.dto.ResponseUrlDTO;
 import com.jpdrpenna.url_shortener.entity.dto.ShortenUrlRequest;
-import com.jpdrpenna.url_shortener.entity.dto.UrlDTO;
 import com.jpdrpenna.url_shortener.service.UrlService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
