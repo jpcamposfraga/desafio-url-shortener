@@ -16,7 +16,7 @@ import java.util.Random;
 @RequiredArgsConstructor
 public class UrlService {
     private final ShortUrlRepository repository;
-    private static final ShortCodeGeneratorService service = new ShortCodeGeneratorService();
+    private final ShortCodeGeneratorService service;
     private final Random random = new Random();
 
     @Value("${app.base-url}")
@@ -37,13 +37,17 @@ public class UrlService {
     }
 
     private Url createUrl(String originalUrl){
-        Url url = new Url(originalUrl, service.generateShortCode(random.nextInt(5, 10)), LocalDateTime.now(), LocalDateTime.now().plusMinutes(5));
+        if (!originalUrl.startsWith("https") || !originalUrl.startsWith("http")){
+            originalUrl = "https://" + originalUrl;
+        }
+
+        Url url = new Url(originalUrl, service.generateShortCode(random.nextInt(5, 11)), LocalDateTime.now(), LocalDateTime.now().plusMinutes(5));
         return repository.save(url);
     }
 
     private String generateLink(UrlDTO urlDTO){
         if (urlDTO!=null){
-            return baseUrl+ "/api/"+ urlDTO.shortUrl();
+            return baseUrl+ "/api/"+ urlDTO.shortUrlCode();
         }
         return null;
     }
